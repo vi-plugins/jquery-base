@@ -1,6 +1,18 @@
 ///<reference types="jquery"/>
 "use strict";
-var JQueryPluginBase = (function () {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var JQueryModuleBase = (function () {
+    function JQueryModuleBase() {
+    }
+    return JQueryModuleBase;
+}());
+exports.JQueryModuleBase = JQueryModuleBase;
+var JQueryPluginBase = (function (_super) {
+    __extends(JQueryPluginBase, _super);
     /**
      * JQueryPluginBase constructor
      *
@@ -10,21 +22,22 @@ var JQueryPluginBase = (function () {
      * @param options - The plugins custom options, default options are extended by these options
      */
     function JQueryPluginBase(name, element, defaults, options) {
-        var _this = this;
-        this.element = element;
-        this.$element = $(element);
+        var _this = _super.call(this) || this;
+        _this.element = element;
+        _this.$element = $(element);
         // clone DOM element for automated destroy
-        this._$clone = this.$element.clone(true);
+        _this._$clone = _this.$element.clone(true);
         // extend default options
-        this.options = $.extend({}, defaults, options);
+        _this.options = $.extend({}, defaults, options);
         // set plugins init event
-        this.$element.on('init.' + name, function () {
+        _this.$element.on('init.' + name, function () {
             _this.init();
         });
         // set plugins destroy event
-        this.$element.on('destroy.' + name, function () {
+        _this.$element.on('destroy.' + name, function () {
             _this.destroy();
         });
+        return _this;
     }
     /**
      * Automated destruction of the given element
@@ -34,5 +47,5 @@ var JQueryPluginBase = (function () {
     };
     ;
     return JQueryPluginBase;
-}());
+}(JQueryModuleBase));
 exports.JQueryPluginBase = JQueryPluginBase;

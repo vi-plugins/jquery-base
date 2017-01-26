@@ -1,6 +1,18 @@
 ///<reference types="jquery"/>
 
-export abstract class JQueryPluginBase {
+export abstract class JQueryModuleBase {
+	/**
+	 * Place initialization logic here
+	 */
+	abstract init(): void;
+
+	/**
+	 * Place destruction logic here
+	 */
+	abstract destroy(): void;
+}
+
+export abstract class JQueryPluginBase extends JQueryModuleBase {
 
 	/**
 	 * The element the plugin is attached to
@@ -23,11 +35,6 @@ export abstract class JQueryPluginBase {
 	private _$clone: JQuery;
 
 	/**
-	 * Place initialization logic here
-	 */
-	abstract init(): void;
-
-	/**
 	 * JQueryPluginBase constructor
 	 *
 	 * @param name - The plugins name
@@ -36,6 +43,8 @@ export abstract class JQueryPluginBase {
 	 * @param options - The plugins custom options, default options are extended by these options
 	 */
 	constructor(name: string, element: Element, defaults: any, options: any) {
+		super();
+
 		this.element = element;
 		this.$element = $(element);
 

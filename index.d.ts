@@ -1,5 +1,15 @@
 /// <reference types="jquery" />
-export declare abstract class JQueryPluginBase {
+export declare abstract class JQueryModuleBase {
+    /**
+     * Place initialization logic here
+     */
+    abstract init(): void;
+    /**
+     * Place destruction logic here
+     */
+    abstract destroy(): void;
+}
+export declare abstract class JQueryPluginBase extends JQueryModuleBase {
     /**
      * The element the plugin is attached to
      */
@@ -16,10 +26,6 @@ export declare abstract class JQueryPluginBase {
      * A clone of the given element for automated destroy function
      */
     private _$clone;
-    /**
-     * Place initialization logic here
-     */
-    abstract init(): void;
     /**
      * JQueryPluginBase constructor
      *
