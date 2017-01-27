@@ -1,7 +1,7 @@
 {
 	"name": "jquery-plugin-base",
 	"description": "An abstract jQuery plugin base class written with TypeScript",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"main": "index.js",
 	"module": "index.ts",
 	"typings": "index.d.ts",
