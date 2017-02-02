@@ -1,11 +1,11 @@
 {
-	"name": "jquery-plugin-base",
+	"name": "@vi-plugins/jquery-base",
 	"description": "An abstract jQuery plugin base class written with TypeScript",
-	"version": "0.0.3",
+	"version": "0.1.0",
 	"main": "index.js",
 	"module": "index.ts",
 	"typings": "index.d.ts",
-	"repository": "https://github.com/virtualidentityag/jquery-plugin-base.git",
+	"repository": "https://github.com/vi-plugins/jquery-base.git",
 	"author": "Jan Rembold <jan.rembold@virtual-identity.com>",
 	"license": "MIT",
 	"scripts": {
