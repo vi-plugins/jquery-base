@@ -1,5 +1,5 @@
 {
-	"name": "@vi-plugins/jquery-base",
+	"name": "jquery-base",
 	"description": "An abstract jQuery plugin base class written with TypeScript",
 	"version": "0.1.0",
 	"main": "index.js",
