@@ -52,7 +52,7 @@ export abstract class JQueryPluginBase extends JQueryModuleBase {
 		this._$clone = this.$element.clone(true);
 
 		// extend default options
-		this.options = $.extend({}, defaults, options);
+		this.options = $.extend(true, {}, defaults, options);
 
 		// set plugins init event
 		this.$element.on('init.' + name, () => {
