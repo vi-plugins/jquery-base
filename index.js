@@ -28,7 +28,7 @@ var JQueryPluginBase = (function (_super) {
         // clone DOM element for automated destroy
         _this._$clone = _this.$element.clone(true);
         // extend default options
-        _this.options = $.extend({}, defaults, options);
+        _this.options = $.extend(true, {}, defaults, options);
         // set plugins init event
         _this.$element.on('init.' + name, function () {
             _this.init();
