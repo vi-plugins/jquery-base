@@ -27,7 +27,8 @@ var JQueryPluginBase = /** @class */ (function (_super) {
      * @param defaults - The plugins default options
      * @param options - The plugins custom options, default options are extended by these options
      */
-    function JQueryPluginBase(name, element, defaults, options) {
+    function JQueryPluginBase(name, element, defaults, options, $) {
+        if ($ === void 0) { $ = jQuery; }
         var _this = _super.call(this) || this;
         _this.element = element;
         _this.$element = $(element);

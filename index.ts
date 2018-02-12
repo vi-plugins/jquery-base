@@ -42,7 +42,7 @@ export abstract class JQueryPluginBase extends JQueryModuleBase {
 	 * @param defaults - The plugins default options
 	 * @param options - The plugins custom options, default options are extended by these options
 	 */
-	constructor(name: string, element: Element, defaults: any, options: any) {
+	constructor(name: string, element: Element, defaults: any, options: any, $: JQueryStatic = jQuery) {
 		super();
 
 		this.element = element;
